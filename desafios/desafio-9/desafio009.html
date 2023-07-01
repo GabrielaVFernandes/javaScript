@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajustar salário</title>
+    <style>
+        body { font: 12pt Arial; }
+        button { font-size: 12pt; padding: 30px; }
+    </style>
+</head>
+<body>
+    <h1>Reajuste salarial</h1>
+
+    <button onclick="converter()">Reajustar Salário</button><br><br>
+
+    <section id="resultado">
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
+
+    <script>
+        function converter() {
+            var funcionario = window.prompt('Qual é o nome do funcionário?')
+
+            var salario = parseFloat(window.prompt('Qual é o salário de ' + funcionario + '?'))
+
+            var porcentagem = parseFloat(window.prompt('O salário de ' + funcionario + ' vai ser reajustado em qual porcentagem?'))
+
+            var reajuste = salario * (1 + porcentagem / 100)
+
+            var aumentoMensal = reajuste - salario
+
+            var resultado = document.getElementById('resultado')
+            
+            resultado.innerHTML = '<strong>' + funcionario + ' recebeu um aumento salarial!</strong>' +
+            '<br><br>' +
+            'O salário atual era R$ ' + salario.toFixed(2) + '.<br><br>' +
+            'Com um aumento de ' + porcentagem.toFixed(2) + '%, o salário vai aumentar R$ ' + (reajuste - salario).toFixed(2) + ' no próximo mês.' +
+            '<br><br>' +
+            'E a partir daí, ' + funcionario + ' vai passar a ganhar R$ ' + reajuste.toFixed(2) + '.';
+        }
+    </script>
+</body>
+</html>

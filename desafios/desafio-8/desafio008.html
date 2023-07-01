@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Desconto</title>
+    <style>
+        body { font: 12pt Arial; }
+        button { font-size: 12pt; padding: 30px; }
+    </style>
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+
+    <button onclick="converter()">Desconto de 10%</button><br><br>
+
+    <section id="resultado">
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
+
+    <script>
+        function converter() {
+            var produto = window.prompt('Qual é o produto que está comprando?')
+
+            var preco = parseFloat(window.prompt('Qual é o preço de ' + produto + '?'))
+
+            var desconto = preco * 0.1
+
+            var precoComDesconto = preco - desconto
+
+            var resultado = document.getElementById('resultado')
+            
+            resultado.innerHTML = 'Calculando desconto de 10% para ' + produto + '<br><br>' +
+                'O preço original era R$ ' + preco.toFixed(2) + '.<br><br>' +
+                'Você acaba de ganhar R$ ' + desconto.toFixed(2) + ' de desconto (-10%).<br><br>' +
+                'No fim, você vai pagar R$ ' + precoComDesconto.toFixed(2) + ' no produto ' + produto + '.'
+        }
+    </script>
+</body>
+</html>

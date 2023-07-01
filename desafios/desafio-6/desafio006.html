@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de temperaturas</title>
+    <style>
+        body { font: 12pt Arial; }
+        button { font-size: 12pt;padding: 30px; }
+        .oculto { display: none; }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Temperaturas</h1>
+
+    <button onclick="converter()">Converter</button><br><br>
+
+    <p id="instrucao">Clique no botão acima para iniciar.</p>
+
+    <div id="resultado"></div>
+
+    <script>
+        function converter() {
+            var temperatura = parseFloat(window.prompt('Digite uma temperatura em ºC (Celsius):'))
+            
+            var kelvin = (temperatura + 273.15).toFixed(2)
+        
+            var fahrenheit = ((temperatura * 9/5) + 32).toFixed(2)
+        
+            var resultadoDiv = document.getElementById('resultado')
+
+            resultadoDiv.innerHTML = "<p><strong>A temperatura de " + temperatura.toFixed(1) + "º °C, corresponde a...</strong></p>"
+
+            resultadoDiv.innerHTML += "<p>" + kelvin + "º K (Kelvin)</p>"
+
+            resultadoDiv.innerHTML += "<p>" + fahrenheit + "º F (Fahrenheit)</p>"
+            
+            var instrucao = document.getElementById('instrucao')
+            instrucao.classList.add("oculto")
+        }
+    </script>
+</body>
+</html>
