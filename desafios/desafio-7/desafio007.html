@@ -19,22 +19,21 @@
     </section>
 
     <script>
-
-            var nome = window.prompt('Antes de mais nada. Quanto está a cotação do dólar agora?')
-                
         function converter() {
+            var nome = window.prompt('Antes de mais nada. Quanto está a cotação do dólar agora?')
+
             var carteira = window.prompt('Quantos R$ você tem na carteira?')
 
-            var cotacao = parseFloat(nome.replace(',', '.')) 
+            var cotacao = parseFloat(nome.replace(',', '.'))
 
-            var reais = parseFloat(carteira.replace(',', '.')) 
+            var reais = parseFloat(carteira.replace(',', '.'))
 
-            var dolares = reais / cotacao 
+            var dolares = reais / cotacao
 
             var resultado = document.getElementById('resultado')
+
             resultado.innerHTML = 'Com R$ ' + carteira + ' você pode comprar aproximadamente US$ ' + dolares.toFixed(2).replace('.', ',')
         }
     </script>
 </body>
 </html>
-

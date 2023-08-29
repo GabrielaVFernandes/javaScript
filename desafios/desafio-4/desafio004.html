@@ -16,12 +16,15 @@
 
     <script>
         function clicar() {
-            var produto = window.prompt('Que produto você está comprando?');
-            var custo = parseFloat(window.prompt('Quanto custa ' + produto + ' que você está comprando?'));
-            var valor = parseFloat(window.prompt('Qual foi o valor que você deu para pagar ' + produto + '?'));
-            var troco = (valor - custo).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+            var produto = window.prompt('Que produto você está comprando?')
 
-            window.alert('Você comprou ' + produto + ' que custou R$' + custo.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }) + '.\nDeu R$' + valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }) + ' em dinheiro e vai receber ' + troco + ' de troco.\nVolte sempre!');
+            var custo = parseFloat(window.prompt('Quanto custa ' + produto + ' que você está comprando?'))
+
+            var valor = parseFloat(window.prompt('Qual foi o valor que você deu para pagar ' + produto + '?'))
+
+            var troco = (valor - custo).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
+
+            window.alert('Você comprou ' + produto + ' que custou R$' + custo.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }) + '.\nDeu R$' + valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }) + ' em dinheiro e vai receber ' + troco + ' de troco.\nVolte sempre!')
         }
     </script>
 </body>
